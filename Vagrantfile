@@ -6,6 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "spantree/ubuntu-precise-64"
+  config.vm.box_version = "=1.1.3"
 
   config.vm.synced_folder '.', '/usr/local/src/project', :create => 'true'
   config.vm.synced_folder 'puppet', '/usr/local/etc/puppet', :create => 'true'
