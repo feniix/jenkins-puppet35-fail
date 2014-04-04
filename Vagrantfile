@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '.', '/usr/local/src/project', :create => 'true'
   config.vm.synced_folder 'puppet', '/usr/local/etc/puppet', :create => 'true'
   config.vm.network :forwarded_port, host: 8080, guest: 8080
+  config.vm.hostname = 'default'
 
   config.vm.provision :shell, :path => 'shell/librarian-puppet-vagrant.sh', :args => '/vagrant/shell'
 
